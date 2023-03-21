@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="chen-naftali" content="Chen-Naftali,Practicum, project_4, Around The U.S." />
+  <meta name="description" content="Around The U.S..
+    Style the design of the project_4" />
+  <meta name="keywords" content="html, css, js" />
+  <!--<link rel="stylesheet" href="./pages/index.css">-->
+  <title>Around The U.S.</title>
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="around the u.s logo" />
+    </header>
+    <main class="content">
+
+      <section class="profile">
+        <img class="profile__image" src="<%=require('./images/image.jpg')%>" alt="Jacques Cousteau img" />
+        <div class="profile__info">
+          <h1 class="profile__name">Jacques Cousteau</h1>
+          <button class="profile__edit-button" type="button" aria-label="edit">
+            <img class="profile__edit" src="<%=require('./images/EditButton.svg')%>" alt="Edit Button img">
+          </button>
+          <p class="profile__explorer">Explorer</p>
+
+        </div>
+        <button class="profile__add-button" type="button" aria-label="add">
+          <img class="profile__add-img" src="<%=require('./images/AddButton.svg')%>" alt="add Button img">
+        </button>
+      </section>
+      <section class="element" id="element">
+        <ul class="element__list">
+          
+        </ul>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__copyrights">© 2022 Around The U.S.</p>
+    </footer>
+    <!--popup type edit-->
+    <div class="popup popup_type-edit">
+      <div class="popup__container">
+        <button class="popup__close popup__close_type-proile" type="button" aria-label="close">
+        </button>
+        <form class="popup__form popup__form_type-profile" name="profile">
+          <div class="popup__input">
+            <h3 class="popup__header">Edit profile</h3>
+
+            <input id="name-input" class="popup__content popup__content_type_name" placeholder="name" name="name"
+              type="text" minlength="2" maxlength="40" required>
+            <span id="name-input-error"></span>
+            <input id="job-input" class="popup__content popup__content_type_aboutMe" placeholder="name" name="aboutMe"
+              type="text" minlength="2" maxlength="200" required>
+            <span id="job-input-error"></span>
+            <button class="popup__save popup__save_disabled" type="submit" disabled>save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--popup_type_add-card-->
+    <div class="popup popup_type_add-card">
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_add" type="button" aria-label="close">
+        </button>
+        <form class="popup__form popup__form_type-add" name="add card">
+          <h3 class="popup__header">New place</h3>
+          <input id="card-input" name="name" class="popup__content popup__content_type_img-title" placeholder="Title" type="text"
+            minlength="1" maxlength="30" required>
+          <span id="card-input-error"></span>
+          <input id="card-link-input" name="link" class="popup__content popup__content_type_img-link" placeholder="Image link"
+            type="url" required>
+          <span id="card-link-input-error"></span>
+          <button class="popup__save popup__save_disabled" type="submit" disabled>save</button>
+        </form>
+      </div>
+    </div>
+    <!--popup_type_delete-card-->
+    <div class="popup popup_type_delete-card">
+      <div class="popup__container">
+        <button class="popup__close popup__close_type_add" type="button" aria-label="close">
+        </button>
+        <form class="popup__form popup__form_type-add" name="add card">
+          <h3 class="popup__header">Are you sure?</h3>
+          <button class="popup__save" type="submit">Yes!</button>
+        </form>
+      </div>
+    </div>
+    <!--popup_type_image-preview-->
+    <div class="popup popup_type_image-preview">
+      <div class="popup__container popup__container_type_image-preview">
+        <button class="popup__close popup__close_type_image-preview" type="button" aria-label="close">
+        </button>
+        <img class="popup__img-preview" src="#" alt="image preview">
+        <h3 class="popup__header-img"></h3>
+      </div>
+    </div>
+
+    <!--card templet-->
+    <template id="card__template">
+      <li class="card__list-item card">
+        <img src="#" alt="view image" class="card__img" />
+        
+        <div class="card__card-description">
+          <h3 class="card__title"></h3>
+          <button class="card__button card__button_type-like" type="button" aria-label="heart shaped button"></button>
+          <span class="card__button card__button_like-counter" style=" color
+          :black;"></span>
+        </div>
+      </li>
+    </template>
+  </div>
+  <!--<script type="module" src="../src/index.js"></script>-->
+</body>
+
+</html>

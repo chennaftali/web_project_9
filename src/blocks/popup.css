@@ -1,0 +1,215 @@
+.popup {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+.popup_open {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.popup__container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.popup__close {
+  background-image: url(../images/CloseIcon.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  align-self: center;
+  border: none;
+  position: absolute;
+  right: -43px;
+  top: -44px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  transition-duration: 1s;
+  background-position: center;
+}
+.popup__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.popup__header {
+  max-width: 330px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+  padding-top: 34px;
+  margin: 0;
+  margin-bottom: 54px;
+}
+.popup__form {
+  width: 358px;
+  background: #fff;
+  color: #f00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-self: center;
+  position: relative;
+  padding: 0;
+}
+.popup__input {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  
+}
+.popup__content_theam_error{
+  color: red;
+  border-top: 1px solid  red;
+}
+.popup__content {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+  padding-bottom: 13px;
+  align-self: start;
+  width: 358px;
+  margin-bottom: 29px;
+}
+.popup__content_type_aboutMe {
+  padding-top: 030px;
+}
+.popup__save {
+  border-radius: 2px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0;
+  padding-top: 14px;
+  padding-bottom: 19px;
+  margin-top: 19px;
+  margin-bottom: 37px;
+  max-width: 358px;
+  transition-duration: 1s;
+  width: 358px;
+}
+.popup__save:hover:not(:disabled) {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.popup__save_disabled {
+  background-color: #E5E5E5;
+  color: #000;
+}
+.popup__container_type_image-preview {
+  background-color: transparent;
+  flex-direction: column;
+}
+.popup__img-preview {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+.popup__header-img {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__form {
+    max-width: 282px;
+  }
+  .popup__container {
+    width: 282px;
+  }
+  .popup__content {
+    max-width: 238px;
+  }
+  .popup__header {
+    max-width: 238px;
+  }
+  .popup__close {
+    top: -45px;
+    right: 10px;
+    width: 30px;
+  }
+  .popup__input {
+    max-width: 282px;
+    padding: 0;
+    padding-left: 19px;
+  }
+  .popup__save {
+    max-width: 238px;
+    margin: 46px auto 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .popup__form {
+    max-width: 282px;
+    box-sizing: border-box;
+    padding: 0 22px 0 22px;
+  }
+  .popup__header {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 25px 22px 0 0px;
+    margin-bottom: 76px;
+  }
+  .popup__input {
+    max-width: 282px;
+    padding: 0px;
+  }
+  .popup__container {
+    width: 282px;
+    padding: 0;
+  }
+  .popup__content {
+    padding-bottom: 9px;
+
+    max-width: 238px;
+    margin: 0;
+  }
+  .popup__save {
+    line-height: 46px;
+    padding: 0;
+    font-size: 14px;
+    max-width: 238px;
+    margin: 46px auto 25px;
+  }
+  .popup__close {
+    right: 10px;
+    height: 26px;
+    width: 26px;
+  }
+  .popup__close-img {
+    width: 26px;
+  }
+}

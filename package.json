@@ -1,0 +1,43 @@
+{
+  "name": "practicum-by-chen",
+  "version": "1.0.0",
+  "description": "project number 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chennaftali/web_project_4.git"
+  },
+  "author": "chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chennaftali/web_project_4/issues"
+  },
+  "homepage": "https://chennaftali.github.io/web_project_4/",
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.18.10",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
+    "gh-pages": "^5.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.25.0",
+    "lodash": "^4.17.21"
+  }
+}
