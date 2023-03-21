@@ -33,7 +33,8 @@ class Api {
       }
       deleteCard(cardID) {
         return customFetch(`${this._baseUrl}/cards/${cardID}`,
-        {method: `DELETE`, headers: this._headers})
+        {headers: this._headers, 
+          method: `DELETE`})
       }
   }
 

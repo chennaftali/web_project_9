@@ -51,10 +51,14 @@ const userInfo = new UserInfo({
 const imageModal = new PopupWithImage(".popup_type_image-preview");
 imageModal.setEventListeners();
 
-const confirmModal = new PopupWithSubmit(".popup_type_delete-card", (id) => {
-  api.deleteCard(id)
-  .then(res=> {console.log("card delete", res)})
-});
+const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
+  //api.deleteCard(id)
+  // .then(res=> {console.log("card delete", res)})
+  // .then(res=> {card.CardhandleElementDelete()
+  // confirmModal.close()})
+
+
+
 
 confirmModal.setEventListeners();
 
@@ -63,7 +67,9 @@ const createCard = (data) => {
     imageModal.open(data.link, data.name);
   },() => {
     confirmModal.open(card._id)
-    
+     card.handleElementDelete()
+     .then( () => {api.deleteCard(card._id)})
+    confirmModal.close()
   });
   const cardElement = card.createCard();
 

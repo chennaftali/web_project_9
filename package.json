@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chennaftali/web_project_4.git"
+    "url": ""
   },
   "author": "chen",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chennaftali/web_project_4/issues"
   },
-  "homepage": "https://chennaftali.github.io/web_project_4/",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-env": "^7.18.10",
@@ -31,7 +31,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.2",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"
   },
