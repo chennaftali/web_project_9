@@ -52,12 +52,25 @@ const imageModal = new PopupWithImage(".popup_type_image-preview");
 imageModal.setEventListeners();
 
 const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
-  //api.deleteCard(id)
+  // api.deleteCard(id)
   // .then(res=> {console.log("card delete", res)})
-  // .then(res=> {card.CardhandleElementDelete()
+  // .then(res=> {Card.CardhandleElementDelete()
   // confirmModal.close()})
 
-
+    ///
+   let handleElementDelete = (cardId) => {
+      confirmModal.open();
+      // confirmModal.setSubmitActionHere(() => {
+      //   api.deleteCard(cardId)
+      //     .then(() => {
+      //       confirmModal.close();
+      //       card.deleteCard();
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+      // });
+    };
 
 
 confirmModal.setEventListeners();
@@ -65,16 +78,16 @@ confirmModal.setEventListeners();
 const createCard = (data) => {
   const card = new Card(data, "#card__template", userInfo._userId, () => {
     imageModal.open(data.link, data.name);
-  },() => {
-    confirmModal.open(card._id)
-     card.handleElementDelete()
-     .then( () => {api.deleteCard(card._id)})
-    confirmModal.close()
-  });
+  // },() => {
+  //   confirmModal.open(card._id)
+  //    confirmModal.handleElementDelete()
+  //    .then( () => {api.deleteCard(card._id)})
+  //   confirmModal.close()
+  // });
   const cardElement = card.createCard();
 
   return cardElement;
-};
+})};
 
 const prependCard = (e) => {        
   const card = createCard(e);

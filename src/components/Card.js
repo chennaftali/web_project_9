@@ -25,12 +25,14 @@ export class Card {
     activLikeButton.classList.toggle("card__button_type_active");
   };
 
-  handleElementDelete = () => {
-    // this._api.deleteCard(id)
-    this._cardElement.remove();
-    //confirmModal.open();
-    this._cardElement = null;
-  };
+  // handleElementDelete = () => {
+  //   // this._api.deleteCard(id)
+  //   this._cardElement.remove();
+  //   //confirmModal.open();
+  //   this._cardElement = null;
+
+    
+  // };
 
   _setEventListeners() {
     this._likeButton.addEventListener("click", this._toggleLikeButton);
