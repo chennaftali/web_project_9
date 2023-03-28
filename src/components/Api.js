@@ -12,23 +12,25 @@ class Api {
       this._headers = headers;
     }
   
-    _checkResponseStatus(res) {
-      if(res.ok){
-        return res.json()
-      } else {
-        return Promise.reject(`Error status: ${res.status}`)
-      }
-    }
+    // _checkResponseStatus(res) {
+    //   console.log(res)
+    //   // if(res.ok){
+    //   //   return res.json()
+    //   // } else {
+    //   //   return Promise.reject(`123Error status: ${res.status}`)
+    //   // }
+    //   return res
+    // }
     getInitialCards() {
       return customFetch(`${this._baseUrl}/cards`, {
         headers: this._headers
-      })
+      }).then(this._checkResponseStatus)
     }
   
     getUserInfo() {//לבדוק כפילויות כי קיימת פונ כזו בuserInfo.js
         return customFetch(`${this._baseUrl}/users/me`, {
           headers: this._headers
-        })
+        })//.then(this._checkResponseStatus)
       }
 
       createCard(data) {
@@ -42,6 +44,28 @@ class Api {
         return customFetch(`${this._baseUrl}/cards/${cardID}`,
         {headers: this._headers, 
           method: `DELETE`})
+      }
+
+      likeCard = (cardID) => {
+        return customFetch(`${this._baseUrl}/cards/likes/${cardID}`, {
+          headers: this._headers,
+          method: `PUT`,
+        })
+      }
+
+      unlikeCard = (cardID) => {
+        return customFetch(`${this._baseUrl}/cards/likes/${cardID}`, {
+          headers: this._headers,
+          method: `DELETE`
+        })
+      }
+
+      changeProfilPicture(data) {
+        return customFetch(`${this._baseUrl}/users/me/avatar`, {
+          headers: this._headers,
+          method: `PATCH`,
+          body: JSON.stringify(data)
+        })
       }
   }
 

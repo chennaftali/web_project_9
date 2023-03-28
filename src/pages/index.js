@@ -34,15 +34,10 @@ import {
 } from "../utils/constants.js";
 
 
-const submitHandler = new UserInfo({
-  profileNameSelector: ".profile__name",
-  profileJobSelector: ".profile__explorer",
-});
-
-
-
-
-
+// const submitHandler = new UserInfo({
+//   profileNameSelector: ".profile__name",
+//   profileJobSelector: ".profile__explorer",
+// });
 
 const userInfo = new UserInfo({
   profileNameSelector: ".profile__name",
@@ -52,14 +47,14 @@ const imageModal = new PopupWithImage(".popup_type_image-preview");
 imageModal.setEventListeners();
 
 const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
-  // api.deleteCard(id)
-  // .then(res=> {console.log("card delete", res)})
-  // .then(res=> {Card.CardhandleElementDelete()
-  // confirmModal.close()})
-
+   //api.deleteCard(res._id)
+   //.then(res=> {console.log("card delete", res)})
+   //.then(res=> {Card.CardhandleElementDelete()
+   //confirmModal.close()})
+  
     ///
-   let handleElementDelete = (cardId) => {
-      confirmModal.open();
+   //let handleElementDelete = (cardId) => {
+      //confirmModal.open();
       // confirmModal.setSubmitActionHere(() => {
       //   api.deleteCard(cardId)
       //     .then(() => {
@@ -70,24 +65,21 @@ const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
       //       console.log(err);
       //     });
       // });
-    };
+    //};
 
 
 confirmModal.setEventListeners();
 
 const createCard = (data) => {
+  //console.log(data)
   const card = new Card(data, "#card__template", userInfo._userId, () => {
-    imageModal.open(data.link, data.name);
-  // },() => {
-  //   confirmModal.open(card._id)
-  //    confirmModal.handleElementDelete()
-  //    .then( () => {api.deleteCard(card._id)})
-  //   confirmModal.close()
-  // });
+    imageModal.open(data.link, data.name)}
+  )
+  
   const cardElement = card.createCard();
-
+    //console.log(cardElement)
   return cardElement;
-})};
+};
 
 const prependCard = (e) => {        
   const card = createCard(e);
@@ -100,21 +92,24 @@ const section = new Section(
 );
 
 const editModal = new PopupWithForm(".popup_type-edit", (data) => {
+  //console.log(data)
   userInfo.setUserInfo(data);
+  
 });
 editModal.setEventListeners();
 
 const addCardModal = new PopupWithForm(".popup_type_add-card", (data) => {
-  console.log(data);
+  //console.log(`data`,data);//name link
   api.createCard(data)
   .then(res => {
-    console.log("res", res)// placeName link:
+    //console.log("res", res)// placeName link:
     section.addItem(res);
   })
-  // const card = {
-  //   name: `${data.placeName}`,
-  //   link: `${data.link}`,
-  // };
+  // const card = new Card({
+  //   handleDelete: () => {
+  //     console.log(123)
+  //   }
+  // })
   
 });
 addCardModal.setEventListeners();
@@ -147,10 +142,10 @@ openProfilePopupButton.addEventListener("click", () => {
 ///Api
 api.getUserInfo()
 .then(res => {
-  userInfo.setUserInfo({userName: res.name, aboutMe:res.about, userId: res._id})
-  console.log("check", api)
+  //console.log(res)
+  userInfo.setUserInfo({name: res.name, aboutMe:res.about, userId: res._id})
+  //console.log("check", api)
 
-  
 })
 api.getInitialCards()
 .then(res => {

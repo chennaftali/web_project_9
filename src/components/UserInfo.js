@@ -18,9 +18,9 @@ export class UserInfo {
   //   this._profileJob.textContent = aboutMe;
   // }
 
-  setUserInfo({ userName, aboutMe, userId}) {//שיניתי מ-name לuserName
+  setUserInfo({ name, aboutMe, userId}) {//שיניתי מ-name לuserName
     
-    this._profileName.textContent = userName;
+    this._profileName.textContent = name;
     this._profileJob.textContent = aboutMe;
     
     this._userId = userId;
