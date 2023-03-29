@@ -12,25 +12,17 @@ class Api {
       this._headers = headers;
     }
   
-    // _checkResponseStatus(res) {
-    //   console.log(res)
-    //   // if(res.ok){
-    //   //   return res.json()
-    //   // } else {
-    //   //   return Promise.reject(`123Error status: ${res.status}`)
-    //   // }
-    //   return res
-    // }
+    
     getInitialCards() {
       return customFetch(`${this._baseUrl}/cards`, {
         headers: this._headers
-      }).then(this._checkResponseStatus)
+      })
     }
   
     getUserInfo() {//לבדוק כפילויות כי קיימת פונ כזו בuserInfo.js
         return customFetch(`${this._baseUrl}/users/me`, {
           headers: this._headers
-        })//.then(this._checkResponseStatus)
+        })
       }
 
       createCard(data) {

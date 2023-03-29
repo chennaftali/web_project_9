@@ -47,7 +47,8 @@ const imageModal = new PopupWithImage(".popup_type_image-preview");
 imageModal.setEventListeners();
 
 const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
-   //api.deleteCard(res._id)
+   api.deleteCard(cardID)
+   
    //.then(res=> {console.log("card delete", res)})
    //.then(res=> {Card.CardhandleElementDelete()
    //confirmModal.close()})
