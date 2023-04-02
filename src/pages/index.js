@@ -47,13 +47,22 @@ const imageModal = new PopupWithImage(".popup_type_image-preview");
 imageModal.setEventListeners();
 
 const confirmModal = new PopupWithSubmit(".popup_type_delete-card");
-   api.deleteCard(cardID)
+let CardhandleElementDelete = (userId) => {
+  api.deleteCard(userId)
+  .then(res=> {console.log("card delete", res)})
+  .then(res=> {Card.CardhandleElementDelete()
+    confirmModal.close()})
+};
    
-   //.then(res=> {console.log("card delete", res)})
-   //.then(res=> {Card.CardhandleElementDelete()
-   //confirmModal.close()})
-  
     ///
+    // let CardhandleElementDelete = (userId) => {
+    //   api.deleteCard(userId)
+    //   .then(res => {console.log("card delete", res); return res})
+    //   .then(res => {Card.CardhandleElementDelete()})
+    //   .then(() => {confirmModal.close()})
+    //   .catch(err => {console.log("Error deleting card", err)})
+    // };
+////    
    //let handleElementDelete = (cardId) => {
       //confirmModal.open();
       // confirmModal.setSubmitActionHere(() => {

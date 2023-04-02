@@ -1,11 +1,11 @@
 export class UserInfo {
-  constructor({ profileNameSelector, profileJobSelector }) {
+  constructor({ profileNameSelector, profileJobSelector , userId }) {
     this._profileName = document.querySelector(profileNameSelector);
     this._profileJob = document.querySelector(profileJobSelector);
-    this._userId;
+    this._userId = userId;
   }
 
-  getUserInfo() {
+  getUserInfo(_userId) {
     return {
       name: this._profileName.textContent,
       job: this._profileJob.textContent,
@@ -18,12 +18,12 @@ export class UserInfo {
   //   this._profileJob.textContent = aboutMe;
   // }
 
-  setUserInfo({ name, aboutMe, userId}) {//שיניתי מ-name לuserName
+  setUserInfo({ name, aboutMe}) {
     
     this._profileName.textContent = name;
     this._profileJob.textContent = aboutMe;
     
-    this._userId = userId;
+    //this._userId = userId;
     //this._profileName._userId =  userId;
     console.log("setUserInfo", this._profileName);
   }
